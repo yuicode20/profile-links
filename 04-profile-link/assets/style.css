@@ -1,0 +1,387 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*,*::before,*::after{box-sizing:border-box}*{margin:0}html,body{height:100%}body{line-height:1.5;-webkit-font-smoothing:antialiased}img,picture,video,canvas,svg{display:block;max-width:100%}input,button,textarea,select{font:inherit}p,h1,h2,h3,h4,h5,h6{overflow-wrap:break-word}#root,#__next{isolation:isolate}
+
+
+/* カラー変数 */
+:root {
+    --base-text-color:#fff;
+    --main-bg-color:#bb7f05;
+  }
+  body,html {
+      overflow-x: hidden;
+  }
+  /* 基礎フォント */
+body{ 
+    font-family: 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, sans-serif;
+}
+/* 英字フォント */
+.en-font{
+     font-family: 'Montserrat', sans-serif;
+    }
+ /* 背景色の指定 */
+.wrap {
+    width: 100%;
+    height: 100%;
+    /* background-image: linear-gradient(135deg, #110d08 0%, #06050C 100%); */
+    background:#0d0d0d;
+    display:-webkit-box;
+  	display:-ms-flexbox;
+  	display:flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+    padding: 0 1rem 2rem;
+    position: relative;
+    z-index: 1;
+}
+.wrap::before {
+    content: "";
+    width:50%;
+    height: 50%;
+    border-radius: 50%;
+    background:rgba(95,61,17,0.4);
+    filter: blur(100px);
+    position: absolute;
+    left: -5%;
+    bottom: -5%;
+    z-index: -1;
+}
+.wrap::after {
+    content: "";
+    width:50%;
+    height: 50%;
+    border-radius: 50%;
+    background:rgba(95,61,17,0.5);
+    filter: blur(100px);
+    position: absolute;
+    right: -10%;
+    top: -10%;
+    z-index: -1;
+}
+/* 枠 */
+.main-container {
+    max-width: 375px;
+    width: 90%;
+    max-height: 540px;
+    border-radius: 30px;
+    backdrop-filter: blur(20px);
+    /* -webkit-backdrop-filter: blur(20px); */
+    background-image: linear-gradient(135deg, rgba(255,255,255, 0) 40%, rgba(206,129,25, 0.4) 90%);
+    box-shadow: rgba(0, 0, 0, 0.05) 2px 2px 10px;
+    border: 1px rgba(255,255,255,0.1) solid;
+    padding: 2rem 1rem 0;
+}
+
+/* プロフィール画像のコンテナー */
+.profile-container {
+    position: relative;
+    padding-top: 2.1rem;
+}
+.profile-container .image {
+    background: url(./images/img01.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 102px;
+    height: 102px;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.3) 3px 3px 10px;
+    position: absolute;
+    top: -80px;
+    left: 0;
+    right: 0;
+    margin:auto;
+}
+/* 名前 */
+.profile-container .name {
+    color:var(--base-text-color);
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-align: center;
+}
+/* スキル一覧 */
+.profile-container .name .skils {
+    display: block;
+    font-size: 0.6rem;
+    font-weight: 600;
+}
+/* SNSアイコンコンテナー */
+.sns-main-container {
+    list-style: none;
+    padding-left: 0;
+    max-width: 180px;
+    height: 190px;
+    margin: 1rem auto 0.5rem;
+    position: relative;
+}
+.sns-main-container .items {
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.2) 5px 5px 10px;
+    transform-style: preserve-3d;
+    transform: perspective(300px);
+    position: absolute;
+}
+.sns-main-container .items a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    display:-webkit-box;
+  	display:-ms-flexbox;
+  	display:flex;
+    justify-content: center;
+    -webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+    transform-style: preserve-3d;
+    transform: perspective(300px);
+}
+.sns-main-container .items img {
+    width: 30px;
+    transform: translateZ(10px);
+}
+/* インスタアイコン */
+.sns-main-container .items-insta {
+    width: 84px;
+    height: 84px;
+    background-color: #4158D0;
+    /* background-image: linear-gradient(297deg, #3c51ba 0%, #b15eac 46%, #d5ac5e 100%); */
+    background-image: linear-gradient(135deg, #3A3A3C 50%, #bb7f05 100%);
+    top: 0;
+    left: 0;
+    position: relative;
+    z-index: 1;
+}
+/* インスタアイコン影 */
+.sns-main-container .items-insta::before {
+    /* content: ""; */
+    width: 40px;
+    height: 20px;
+    background: #734f07;
+    border-radius: 50%;
+    filter: blur(10px);
+    position: absolute;
+    bottom: -8px;
+    left: 23px;
+}
+/* Twitterアイコン */
+.sns-main-container .items-twitter {
+    width: 72px;
+    height: 72px;
+    background-image: linear-gradient(135deg, #3A3A3C 50%, #bb7f05 100%);
+    /* background: #ba8110; */
+    top: 30px;
+    right: 10px;
+}
+/* Twitterアイコン影 */
+.sns-main-container .items-twitter::before {
+    /* content: ""; */
+    width: 40px;
+    height: 10px;
+    background: #734f07;
+    border-radius: 50%;
+    filter: blur(9px);
+    position: absolute;
+    bottom: -10px;
+    left: 18px;
+}
+/* YouTubeアイコン */
+.sns-main-container .items-youtube {
+    width: 61px;
+    height: 61px;
+    /* background-image: linear-gradient(135deg, #ce8383 0%, #910404 100%); */
+    background-image: linear-gradient(135deg, #3A3A3C 50%, #bb7f05 100%);
+    top: 93px;
+    left: 25px;
+}
+/* YouTubeアイコン影 */
+.sns-main-container .items-youtube::before {
+    content: "";
+    width: 30px;
+    height: 10px;
+    background: #734f07;
+    border-radius: 50%;
+    filter: blur(10px);
+    position: absolute;
+    bottom: -10px;
+    left: 17px;
+}
+/* githubアイコン */
+.sns-main-container .items-github {
+    width: 70px;
+    height: 70px;
+    background-color: #C64DAA;
+    /* background-image: linear-gradient(296deg, #58347e 0%, #af58cb 100%); */
+    background-image: linear-gradient(135deg, #3A3A3C 50%, #bb7f05 100%);
+    top: 115px;
+    right: 15px;
+}
+/* githubアイコン影 */
+.sns-main-container .items-github::before {
+    content: "";
+    width: 30px;
+    height: 10px;
+    background: #734f07;
+    border-radius: 50%;
+    filter: blur(8px);
+    position: absolute;
+    bottom: -3px;
+    left: 22px;
+}
+
+/* サブコンテンツ一覧 */
+.sns-sub-container {
+    max-width: 180px;
+    margin: 0 auto 1rem;
+    list-style: none;
+    padding-left: 0;
+    display:-webkit-box;
+  	display:-ms-flexbox;
+  	display:flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+  	flex-wrap: wrap;
+}
+.sns-sub-container .items {
+    width: 48%;
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+/* リンク1 */
+.sns-sub-container .items:first-child {
+    padding-left: 20px;
+}
+.sns-sub-container .items:first-child::before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    background: url(./images/icon-link.svg) no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+/* リンク2 */
+.sns-sub-container .items:nth-child(2) {
+    padding-left: 20px;
+}
+.sns-sub-container .items:nth-child(2)::before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    background: url(./images/icon-link.svg) no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+/* リンク3 */
+.sns-sub-container .items:nth-child(3) {
+    padding-left: 20px;
+}
+.sns-sub-container .items:nth-child(3)::before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    background: url(./images/icon-link.svg) no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+.sns-sub-container .items-note img {
+    max-width: 60px;
+}
+.sns-sub-container .items a {
+color: var(--base-text-color);
+text-decoration: none;
+font-weight: bold;
+font-size: 0.7rem;
+}
+/* おすすめアイテム一覧 */
+.recommend-container {
+    list-style: none;
+    padding: 1rem 1rem 0.5rem;
+    display:-webkit-box;
+  	display:-ms-flexbox;
+  	display:flex;
+    overflow-x: scroll;
+    width: calc(100% + 150px);
+    margin: 0 -80px;
+}
+/* おすすめアイテム一覧のアイテム */
+.recommend-container .items {
+    min-width: 200px;
+    min-height: 100px;
+    margin: 0 0.5rem;
+    flex: 1 1 auto;
+    border-radius: 25px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: rgba(0, 0, 0, 0.2) 3px 3px 10px;
+    border: 1px rgba(255,255,255,0.1) solid;
+    background-image: linear-gradient(135deg, rgba(255,255,255, 0) 50%, rgba(206,129,25, 0.4) 90%);
+    padding: 1rem;
+}
+.recommend-container .items .image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #fff;
+    margin: 0 auto 0.5rem;
+}
+/* おすすめアイテム一覧の画像指定 */
+.recommend-container .items:nth-child(1) .image {
+    background: url(./images/img-Lecommend.png) no-repeat;
+    background-color: #fff;
+    background-size: 100%;
+    background-position: center;
+}
+.recommend-container .items:nth-child(2) .image {
+    background: url(./images/img-Lecommend.png) no-repeat;
+    background-color: #fff;
+    background-size: 100%;
+    background-position: center;
+}
+.recommend-container .items:nth-child(3) .image {
+    background: url(./images/img-Lecommend.png) no-repeat;
+    background-color: #fff;
+    background-size: 100%;
+    background-position: center;
+}
+.recommend-container .items .title {
+    line-height: 1;
+    margin-bottom: 0.3rem;
+    text-align: center;
+}
+.recommend-container .items .title a {
+    display: inline-block;
+    padding: 8px 10px;
+    background: var(--main-bg-color);
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #fff;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: .2s;
+}
+.recommend-container .items .title a:hover {
+    opacity: 0.8;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 0 8px;
+}
+.recommend-container .items .content {
+    font-size: 0.65rem;
+    color: var(--base-text-color);
+}
