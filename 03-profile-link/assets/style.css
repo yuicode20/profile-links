@@ -16,6 +16,9 @@
   /* 基礎フォント */
 body{ 
     font-family: 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, sans-serif;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(135deg, #726e56 0%, #042947 100%);
 }
 /* 英字フォント */
 .en-font{
@@ -25,17 +28,16 @@ body{
 .wrap {
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(135deg, #726e56 0%, #042947 100%);
     display:-webkit-box;
   	display:-ms-flexbox;
   	display:flex;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      justify-content: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     -webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
-    padding: 0 1rem 2rem;
+    padding: 1rem 1rem 2rem;
     position: relative;
     z-index: 1;
 }
@@ -68,6 +70,7 @@ body{
     max-width: 375px;
     width: 90%;
     max-height: 540px;
+    height: 90%;
     border-radius: 30px;
     backdrop-filter: blur(30px);
     /* -webkit-backdrop-filter: blur(30px); */
